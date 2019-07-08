@@ -38,8 +38,8 @@ class HeatMapBackground extends HtmlCanvasVisual {
 
     if (!canvas || canvas.width !== width || canvas.height !== height) {
       canvas = document.createElement('canvas')
-      canvas.setAttribute('width', width)
-      canvas.setAttribute('height', height)
+      canvas.width = width
+      canvas.height = height
       backgroundContext = canvas.getContext('2d')
       this.canvas = canvas
       this.ctx = backgroundContext
@@ -104,7 +104,7 @@ class HeatMapBackground extends HtmlCanvasVisual {
       }
     })
 
-    ctx.filter = 'url(#heatmap)'
+    ctx.filter = `url(${document.location.pathname}#heatmap)`
     ctx.drawImage(canvas, 0, 0)
     ctx.restore()
   }
