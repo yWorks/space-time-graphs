@@ -1,0 +1,17 @@
+<section class="content">
+  <div class="columns">
+    <aside class="sidebar-first" *ngIf="graphMode === geoMode">
+      <app-propertypanel style="display: block;" [nodes]="nodes"></app-propertypanel>
+    </aside>
+    <main class="main">
+      <app-main
+        [nodes]="nodes"
+        [edges]="edges"
+        [timelineVisible]="timelineVisible | async"
+      ></app-main>
+    </main>
+    <!--        <aside class="sidebar-second">-->
+    <!--            <p>{{graphMode}}</p>-->
+    <!--        </aside>-->
+  </div>
+</section>

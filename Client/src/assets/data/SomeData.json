@@ -1,0 +1,173 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "image": "/assets/people/Person0.jpg",
+      "name": "Person 0",
+      "lat": 50.881703,
+      "lng": 6.715257,
+      "level": 0.4,
+      "style": "entity",
+      "date": "2019-01-01",
+      "description": "Took an early flight to Paris that day.",
+      "badges": [
+        {
+          "name": "A",
+          "info": "A badge"
+        },
+        {
+          "name": "B",
+          "info": "B badge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "image": "/assets/places/marocco.png",
+      "name": "Marocco",
+      "lat": 33.585208,
+      "lng": -7.675332,
+      "level": 0.74,
+      "style": "entity",
+      "date": "2019-02-01",
+      "description": "Marocco complex owned by Person 2."
+    },
+    {
+      "id": 3,
+      "image": "/assets/people/Person2.jpg",
+      "name": "Person 2",
+      "lat": 52.219858,
+      "lng": 8.163104,
+      "level": 0.31,
+      "style": "entity",
+      "date": "2019-03-01",
+      "description": "Was waiting at Degaule airport next to Person 0."
+    },
+    {
+      "id": 4,
+      "image": "/assets/people/Person3.jpg",
+      "name": "Person 3",
+      "lat": 50.123966,
+      "lng": 8.513595,
+      "level": 0.78,
+      "style": "entity",
+      "date": "2018-07-18",
+      "description": "On the road with a red Fiat Punto."
+    },
+    {
+      "id": 5,
+      "image": "/assets/people/Person4.jpg",
+      "name": "Person 4",
+      "lat": 48.412923,
+      "lng": 10.440248,
+      "level": 0.19,
+      "style": "entity",
+      "date": "2018-11-20",
+      "description": "Arrested by Police on the highway."
+    },
+    {
+      "id": 6,
+      "image": "/assets/places/bunker.png",
+      "name": "Toxic waste",
+      "lat": 46.438531,
+      "lng": 8.841179,
+      "level": 0.88,
+      "style": "entity",
+      "date": "2018-11-20",
+      "description": "Sealed storage place containing toxic waste."
+    },
+    {
+      "id": 7,
+      "image": "/assets/places/nice.png",
+      "name": "Yacht cargo",
+      "lat": 43.69675,
+      "lng": 7.284328,
+      "level": 0.88,
+      "style": "entity",
+      "date": "2017-11-08",
+      "description": "Large cargo found in Nice yacht."
+    },
+    {
+      "id": 8,
+      "image": "/assets/people/Person5.jpg",
+      "name": "Person 5",
+      "lat": 43.89675,
+      "lng": 7.0284328,
+      "level": 0.68,
+      "style": "entity",
+      "date": "2017-11-08",
+      "description": "Person 5 in Nice",
+      "badges": [
+        {
+          "name": "A",
+          "info": "A badge"
+        },
+        {
+          "name": "B",
+          "info": "B badge"
+        },
+        {
+          "name": "C",
+          "info": "C badge"
+        },
+        {
+          "name": "D",
+          "info": "D badge"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "image": "/assets/places/milan.jpg",
+      "name": "Transaction",
+      "lat": 45.487766,
+      "lng": 9.20813,
+      "level": 0.55,
+      "style": "entity",
+      "date": "2018-11-20",
+      "description": "Transactions at the State Street Bank of Milan."
+    }
+  ],
+  "edges": [
+    {
+      "from": 2,
+      "to": 1
+    },
+    {
+      "from": 2,
+      "to": 3
+    },
+    {
+      "from": 2,
+      "to": 4
+    },
+    {
+      "from": 3,
+      "to": 5
+    },
+    {
+      "from": 5,
+      "to": 6
+    },
+    {
+      "from": 5,
+      "to": 7
+    },
+    {
+      "from": 8,
+      "to": 7
+    },
+    {
+      "from": 9,
+      "to": 3
+    },
+    {
+      "from": 9,
+      "to": 1
+    },
+    {
+      "from": 9,
+      "to": 7
+    }
+  ]
+}

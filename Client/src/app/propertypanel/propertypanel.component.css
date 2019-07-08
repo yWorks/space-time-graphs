@@ -1,0 +1,10 @@
+.node-data {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+.contain {
+  min-height: 101%;
+}
+.item {
+  font-size: small;
+}

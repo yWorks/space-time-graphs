@@ -1,0 +1,6 @@
+This folder should at least contain
+
+/lib/es-modules/*
+/ide-support/yfiles-typeinfo.js
+
+from the yFiles package.
