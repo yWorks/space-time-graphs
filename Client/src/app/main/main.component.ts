@@ -23,7 +23,7 @@ import { MainHighlightManager } from './graph/highlighters'
 import { Styling } from './graph/styling'
 import { GraphLayer, GrayTileLayer } from './graph/graphLayer'
 import { ToggleGraphControl } from './toolbar/toolbarControl'
-import { SetGraphMode } from '../store/actions/graphActions'
+import { SetGraphMode, ShowTimeline } from '../store/actions/graphActions'
 import { GraphComponent, FilteredGraphWrapper, GraphViewerInputMode } from 'yfiles'
 
 @Component({
@@ -144,6 +144,8 @@ export class MainComponent implements AfterViewInit, OnInit {
         self.timeline.setVisible(self._timelineVisible)
         Shared.timelineControl = this.timeline
         Shared.graphLayer.updateGraphDiv()
+
+        this.store.dispatch(new ShowTimeline())
       })
     } catch (e) {
       self.zone.runTask(() => {

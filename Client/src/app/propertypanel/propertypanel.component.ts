@@ -91,8 +91,6 @@ export class PropertyPanelComponent implements OnInit {
       }
       self.currentFileName = name
     })
-
-    this.store.dispatch(new ShowTimeline())
   }
 
   openDialog(): void {
