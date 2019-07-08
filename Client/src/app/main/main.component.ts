@@ -24,7 +24,7 @@ import { Styling } from './graph/styling'
 import { GraphLayer, GrayTileLayer } from './graph/graphLayer'
 import { ToggleGraphControl } from './toolbar/toolbarControl'
 import { SetGraphMode } from '../store/actions/graphActions'
-import { GraphComponent, FilteredGraphWrapper } from 'yfiles'
+import { GraphComponent, FilteredGraphWrapper, GraphViewerInputMode } from 'yfiles'
 
 @Component({
   selector: 'app-main',
@@ -192,6 +192,15 @@ export class MainComponent implements AfterViewInit, OnInit {
           return
         }
         this.updateLayout()
+
+        if (!this.graphComponent.currentItem) {
+          // select a node for demonstration purpose
+          const inputMode = this.graphComponent.inputMode as GraphViewerInputMode
+          const item = this.graphComponent.graph.nodes.first()
+          this.graphComponent.currentItem = item
+          inputMode.setSelected(item, true)
+        }
+
         // self.timeline.updater();
         // self.timeline.filteringEnabled(false);
       })
