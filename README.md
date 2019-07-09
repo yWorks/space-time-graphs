@@ -19,7 +19,7 @@ or
     
 within the `Client` directories. Once the packages are installed use
 
-    npm start
+    yarn start
     
 the app will be at port 4001. You can also explicitly use something like
 
