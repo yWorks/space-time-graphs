@@ -1,6 +1,8 @@
 {
-  "name": "yfiles.demo.angular-cli",
+  "name": "space-time-graphs",
   "version": "1.0.0",
+  "license": "MIT",
+  "description": "A demo from the yFiles labs about how to work with temporal and geo-spatial data in graphs.",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open --port 4001",

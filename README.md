@@ -6,8 +6,8 @@ How time windows filter out diagrams and how geographic mapping of diagrams can 
 
 ## Install
 
-Copy the content of a yFiles for HTML 2.2 package into `./yFiles/` as well as the `license.json`
-of your yFiles package into `./Client/src/assets/`.
+Copy the content of the yFiles for HTML 2.2 package into the `./yFiles/` directory. In addition, the `license.json` file 
+of your yFiles package needs to be copied into the `./Client/src/assets/` directory. The yFiles license needs to be packaged with the Angular assets in order to work properly.
 
 Then, run 
 

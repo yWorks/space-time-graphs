@@ -24,8 +24,8 @@ fetch('./assets/license.json')
     return response.json()
   })
   .then(license => {
-    License.value = license
+    License.value = license;
     platformBrowserDynamic()
       .bootstrapModule(AppModule)
       .catch(err => console.log(err))
-  })
+  });
