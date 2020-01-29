@@ -1,0 +1,53 @@
+{
+  "name": "space-time-graphs-for-yfiles-for-html",
+  "description": "The sample app for the yFiles use case Navigating Your Graph Through Time and Space",
+  "homepage": "https://www.yworks.com/use-case/space-time-graphs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preinstall": "cd ../yFiles-for-HTML-Complete-2.2.0.3-Evaluation/ && npm pack lib/es-modules/",
+    "postinstall": "node copy-license.js",
+    "ng": "ng",
+    "start": "ng serve --open --port 4001",
+    "serve": "ng serve --open --port 4001",
+    "watch": "ng build --watch",
+    "build": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --prod --build-optimizer=false",
+    "prettier": "prettier --write **/*.{js,json,ts,css}"
+  },
+  "dependencies": {
+    "@angular/animations": "~8.2.14",
+    "@angular/cdk": "^8.2.3",
+    "@angular/common": "~8.2.14",
+    "@angular/compiler": "~8.2.14",
+    "@angular/core": "~8.2.14",
+    "@angular/forms": "~8.2.14",
+    "@angular/material": "^8.2.3",
+    "@angular/platform-browser": "~8.2.14",
+    "@angular/platform-browser-dynamic": "~8.2.14",
+    "@angular/router": "~8.2.14",
+    "@ngrx/effects": "^8.5.2",
+    "@ngrx/store": "^8.5.2",
+    "bootstrap": "^4.4.1",
+    "d3": "^5.14.2",
+    "leaflet": "^1.6.0",
+    "leaflet-draw": "^1.0.4",
+    "moment": "^2.24.0",
+    "rxjs": "~6.4.0",
+    "tslib": "^1.10.0",
+    "yfiles": "../yFiles-for-HTML-Complete-2.2.0.3-Evaluation/yfiles-22.0.3-eval.tgz",
+    "zone.js": "~0.9.1"
+  },
+  "devDependencies": {
+    "@angular-builders/custom-webpack": "^8.4.1",
+    "@angular-devkit/build-angular": "~0.803.20",
+    "@angular/cli": "~8.3.20",
+    "@angular/compiler-cli": "~8.2.14",
+    "@angular/language-service": "~8.2.14",
+    "@types/node": "~8.9.4",
+    "@types/leaflet": "^1.5.7",
+    "@yworks/optimizer": "^1.0.6",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.15.0",
+    "typescript": "~3.5.3"
+  }
+}

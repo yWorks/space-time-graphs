@@ -1,0 +1,112 @@
+<div>
+  <div class="logo-section">
+    <div class="logo-link" (click)="openDialog()">
+      <img src="assets/logo_demo_plain.svg" alt="yFiles for HTML Logo" class="logo-image" />
+      <span class="logo-text">Space-time Graphs</span>
+    </div>
+  </div>
+
+  <div class="ref-section">
+    <div class="ref-title" (click)="openDialog()">
+      <img src="assets/info_icon.svg" /> About this app
+    </div>
+    <div class="ref-title">
+      <a href="https://github.com/yWorks/space-time-graphs" target="_blank">
+        <svg width="32" height="32" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill="#FFFFFF" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+  <div *ngIf="$currentNode">
+    <div class="event-section">
+      <img class="event-avatar" src="{{ $currentNode.image }}" alt="Event Image" />
+      <span class="event-title">{{ $currentNode.name }}</span>
+    </div>
+    <div class="event-details-section">
+      <img class="event-icon" src="assets/icons/labo.png" alt="Event Image" />
+      <span class="event-details-title">contamination</span>
+      <div style="margin: 10px 0 0 0;">
+        <div class="row">
+          <div class="col-md-3 prop-label">Latitude:</div>
+          <div class="col-md-3 prop-value">{{ $currentNode.lat }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 prop-label">Longitude:</div>
+          <div class="col-md-3 prop-value">{{ $currentNode.lat }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 prop-label">Date:</div>
+          <div class="col-md-4 prop-value">{{ $currentNode.date }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 prop-label">Level:</div>
+          <div class="col-md-3 prop-value">{{ $currentNode.level | percent }}</div>
+        </div>
+        <div class="row">
+          <div class="progress" style="width: 70%; margin: 10px 25px;">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              aria-valuenow="40"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              [style.width]="$currentNode.level * 100 + '%'"
+            ></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 prop-label">Incoming:</div>
+        </div>
+        <div *ngIf="successors.length">
+          <div class="row" *ngFor="let s of successors">
+            <div class="col-md-3 prop-label"></div>
+            <div class="col-md-5 prop-label">▪︎ {{ s.tag.name }}</div>
+          </div>
+        </div>
+        <div *ngIf="!successors.length">
+          <div class="row">
+            <div class="col-md-3 prop-label"></div>
+            <div class="col-md-5 prop-label">None</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 prop-label">Outgoing:</div>
+        </div>
+        <div *ngIf="predecessors.length">
+          <div class="row" *ngFor="let s of predecessors">
+            <div class="col-md-3 prop-label"></div>
+            <div class="col-md-5 prop-label">▪︎ {{ s.tag.name }}</div>
+          </div>
+        </div>
+        <div *ngIf="!predecessors.length">
+          <div class="row">
+            <div class="col-md-3 prop-label"></div>
+            <div class="col-md-5 prop-label">None</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3  prop-label">Description:</div>
+        </div>
+        <div class="row">
+          <div class="event-description">{{ $currentNode.description }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-section">
+    <img class="event-icon" src="assets/icons/network1.png" alt="Event Image" />
+    <span class="event-details-title">Network</span>
+    <div class="prop-value">Nodes: {{ nodeCount }}</div>
+    <div class="prop-value">Edges: {{ edgeCount }}</div>
+  </div>
+
+  <!--    <div *ngIf="nodes" class="contain">-->
+  <!--        <ul class="node-data">-->
+  <!--            <li *ngFor="let item of (nodes); let i = index" class="item">-->
+  <!--                {{item.name}}-->
+  <!--            </li>-->
+  <!--        </ul>-->
+  <!--    </div>-->
+</div>

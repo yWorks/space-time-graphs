@@ -1,0 +1,4 @@
+*.html
+**/node_modules/
+src/assets/**
+src/yfiles-typeinfo.js

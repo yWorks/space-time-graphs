@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+  <g fill="#666">
+    <path d="M4.285-.034h1.102v12.112H4.285z"/>
+    <path d="M4.836 16l-1.955-4.746h3.91z"/>
+    <g>
+      <path d="M8.957-.052H12.2v11.538H8.957z"/>
+      <path d="M10.577 16l-2.542-4.746h5.084z"/>
+    </g>
+  </g>
+</svg>
