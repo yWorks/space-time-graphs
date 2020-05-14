@@ -18,7 +18,8 @@ module.exports = function(config) {
           'context',
           'move',
           'invert',
-          'level'
+          'level',
+          'animate'
         ]
       })
     )
