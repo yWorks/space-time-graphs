@@ -162,5 +162,4 @@ typings/
 /dist/
 src/assets/yfiles/
 license.json
-yfiles-typeinfo.js
 live/

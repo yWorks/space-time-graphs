@@ -138,7 +138,7 @@ export class GraphLayer extends L.Layer {
     this.graphComponent = new GraphComponent()
     // define the shared graph to be used later by all elements
     // the filtering definition happens after TimelineControl etc. are created.
-    Shared.graph = new FilteredGraphWrapper(this.graphComponent.graph, node => true, edge => true)
+    Shared.graph = new FilteredGraphWrapper(this.graphComponent.graph, () => true, () => true)
     this.graphComponent.zoom = 1
     this.graphComponent.autoDrag = false
     this.graphComponent.horizontalScrollBarPolicy = ScrollBarVisibility.NEVER

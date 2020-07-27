@@ -11,7 +11,6 @@ import { SetCurrentNode, SetGraphMode } from '../../store/actions/graphActions'
 import { IEdge, INode } from '../../main/data/entities'
 import { GraphMode } from '../../main/shared'
 import { Reset } from '../../store/actions/storeActions'
-import { ICommand } from 'yfiles'
 
 @Component({
   selector: 'app-mainview',

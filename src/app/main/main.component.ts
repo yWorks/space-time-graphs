@@ -235,7 +235,7 @@ export class MainComponent implements AfterViewInit, OnInit {
           return true
         }
       },
-      edge => true
+      () => true
     )
   }
 

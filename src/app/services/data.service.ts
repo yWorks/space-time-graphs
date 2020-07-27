@@ -24,7 +24,7 @@ export class DataService implements OnInit {
 
   someData(): Observable<any[]> {
     return this.http.get(`assets/data/SomeData.json`, httpOptions).pipe(
-      catchError(this.handleError),
+      catchError(DataService.handleError),
       map((d: any) => {
         if (_.isNil(d)) {
           return null
@@ -34,7 +34,7 @@ export class DataService implements OnInit {
     )
   }
 
-  private handleError(error: HttpErrorResponse): any {
+  private static handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error.message)

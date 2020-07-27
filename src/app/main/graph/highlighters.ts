@@ -3,15 +3,14 @@
  */
 import {
   CanvasComponent,
+  GraphComponent,
   HighlightIndicatorManager,
   INode,
-  GraphComponent,
-  NodeStyleDecorationInstaller,
   Insets,
-  StyleDecorationZoomPolicy,
+  NodeStyleDecorationInstaller,
   ShapeNodeStyle,
   Stroke,
-  Fill
+  StyleDecorationZoomPolicy
 } from 'yfiles'
 
 export class MainHighlightManager extends HighlightIndicatorManager<INode> {

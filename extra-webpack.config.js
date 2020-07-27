@@ -5,7 +5,7 @@ module.exports = function(config) {
     // Obfuscate yFiles modules and usages for production build
     config.plugins.push(
       new YWorksOptimizerPlugin({
-        logLevel: 'debug',
+        logLevel: 'info',
         blacklist: [
           'update',
           'ofType',
@@ -23,10 +23,6 @@ module.exports = function(config) {
         ]
       })
     )
-  } else {
-    // Add yFiles debugging support for development build
-    console.log('Development build - adding yfiles-typeinfo.js for improved debugging')
-    config.entry.main.unshift('src/assets/yfiles/yfiles-typeinfo.js')
   }
 
   return config

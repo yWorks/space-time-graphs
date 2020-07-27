@@ -5,7 +5,7 @@ import { IAppState } from '../store/IAppState'
 
 import { IEdge, INode } from '../main/data/entities'
 import { Shared } from '../main/shared'
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog'
 import { AboutDialogComponent } from '../main/aboutdialog/aboutdialog.component'
 
 @Component({
@@ -51,11 +51,10 @@ export class PropertyPanelComponent implements OnInit {
       self.edgeCount = es.length
       this.links = es
     })
-
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(AboutDialogComponent, {
+    this.dialog.open(AboutDialogComponent, {
       width: '600px'
     })
   }
