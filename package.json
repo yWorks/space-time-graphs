@@ -15,16 +15,16 @@
     "prettier": "prettier --write **/*.{js,json,ts,css}"
   },
   "dependencies": {
-    "@angular/animations": "~8.2.14",
+    "@angular/animations": "~9.1.12",
     "@angular/cdk": "^8.2.3",
-    "@angular/common": "~8.2.14",
-    "@angular/compiler": "~8.2.14",
-    "@angular/core": "~8.2.14",
-    "@angular/forms": "~8.2.14",
+    "@angular/common": "~9.1.12",
+    "@angular/compiler": "~9.1.12",
+    "@angular/core": "~9.1.12",
+    "@angular/forms": "~9.1.12",
     "@angular/material": "^8.2.3",
-    "@angular/platform-browser": "~8.2.14",
-    "@angular/platform-browser-dynamic": "~8.2.14",
-    "@angular/router": "~8.2.14",
+    "@angular/platform-browser": "~9.1.12",
+    "@angular/platform-browser-dynamic": "~9.1.12",
+    "@angular/router": "~9.1.12",
     "@ngrx/effects": "^8.6.0",
     "@ngrx/store": "^8.6.0",
     "bootstrap": "^4.5.0",
@@ -33,20 +33,20 @@
     "leaflet-draw": "^1.0.4",
     "moment": "^2.27.0",
     "rxjs": "~6.6.0",
-    "tslib": "^1.13.0",
+    "tslib": "^1.10.0",
     "yfiles": "../yFiles-for-HTML-Complete-2.3.0.1-Evaluation/yfiles-23.0.1-eval.tgz",
-    "zone.js": "~0.10.3"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^8.4.1",
-    "@angular-devkit/build-angular": "~0.803.20",
-    "@angular/cli": "~8.3.29",
-    "@angular/compiler-cli": "~8.2.14",
-    "@angular/language-service": "~8.2.14",
-    "@types/node": "~8.10.62",
+    "@angular-devkit/build-angular": "~0.901.12",
+    "@angular/cli": "~9.1.12",
+    "@angular/compiler-cli": "~9.1.12",
+    "@angular/language-service": "~9.1.12",
+    "@types/node": "^12.11.1",
     "@types/leaflet": "^1.5.17",
     "@yworks/optimizer": "^1.3.2",
     "tslint": "~5.20.1",
-    "typescript": "~3.5.3"
+    "typescript": "~3.8.3"
   }
 }
