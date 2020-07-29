@@ -20,7 +20,11 @@ const initialState: IAppState = {
   imports: [
     StoreModule.forRoot(reducers, {
       metaReducers: metaReducers,
-      initialState: initialState
+      initialState: initialState,
+      runtimeChecks: {
+        strictStateImmutability: false,
+        strictActionImmutability: false
+      }
     }),
     CommonModule
   ]

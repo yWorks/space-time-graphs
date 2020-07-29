@@ -15,6 +15,20 @@
     "prettier": "prettier --write **/*.{js,json,ts,css}"
   },
   "dependencies": {
+<<<<<<< dest
+    "@angular/animations": "~9.1.12",
+    "@angular/cdk": "^9.2.4",
+    "@angular/common": "~9.1.12",
+    "@angular/compiler": "~9.1.12",
+    "@angular/core": "~9.1.12",
+    "@angular/forms": "~9.1.12",
+    "@angular/material": "^9.2.4",
+    "@angular/platform-browser": "~9.1.12",
+    "@angular/platform-browser-dynamic": "~9.1.12",
+    "@angular/router": "~9.1.12",
+    "@ngrx/effects": "^8.6.0",
+    "@ngrx/store": "^8.6.0",
+=======
     "@angular/animations": "~10.0.5",
     "@angular/cdk": "^10.1.0",
     "@angular/common": "~10.0.5",
@@ -27,6 +41,7 @@
     "@angular/router": "~10.0.5",
     "@ngrx/effects": "^9.2.0",
     "@ngrx/store": "^9.2.0",
+>>>>>>> source
     "bootstrap": "^4.5.0",
     "d3": "^5.16.0",
     "leaflet": "^1.6.0",

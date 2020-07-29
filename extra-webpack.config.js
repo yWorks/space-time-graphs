@@ -6,6 +6,7 @@ module.exports = function(config) {
     config.plugins.push(
       new YWorksOptimizerPlugin({
         logLevel: 'info',
+        safeMode: true,
         blacklist: [
           'update',
           'ofType',

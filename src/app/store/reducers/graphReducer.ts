@@ -5,19 +5,15 @@ import {
   TimelineActionTypes
 } from '../actions/graphActions'
 import { GraphActions } from '../actions'
-import * as _ from 'lodash'
 import { IEdge, INode } from '../../main/data/entities'
 import { GraphMode } from '../../main/shared'
 
 export function nodeReducer(state: Array<INode> = [], action: GraphActions): Array<INode> {
   switch (action.type) {
     case NodeActionTypes.Delete:
-      // in-place altered array
-      _.remove(state, n => n.id === action.nodeData.id)
-      return [...state]
+      return state.filter(n => n.id !== action.nodeData.id)
     case NodeActionTypes.Add:
-      state.push(action.nodeData)
-      return [...state]
+      return state.concat(action.nodeData)
     case NodeActionTypes.DeleteAll:
       return []
     default:
@@ -39,11 +35,9 @@ export function currentNodeReducer(state: INode, action: GraphActions): INode {
 export function edgeReducer(state: Array<IEdge> = [], action: GraphActions) {
   switch (action.type) {
     case EdgeActionTypes.Add:
-      state.push(action.edgeData)
-      return [...state]
+      return state.concat(action.edgeData)
     case EdgeActionTypes.Delete:
-      _.remove(state, n => n.id === action.edgeData.id)
-      return [...state]
+      return state.filter(n => n.id !== action.edgeData.id)
     case EdgeActionTypes.DeleteAll:
       return []
     default:

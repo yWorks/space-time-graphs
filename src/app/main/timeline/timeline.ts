@@ -1,4 +1,4 @@
-import { AfterViewInit, OnChanges, OnInit } from '@angular/core'
+import { AfterViewInit, OnChanges, OnInit, Directive } from '@angular/core'
 import * as d3 from 'd3'
 import * as _ from 'lodash'
 import * as L from 'leaflet'
@@ -10,6 +10,7 @@ import * as moment from 'moment'
 /**
  * A timeline based on d3 integrated in LEaflet
  */
+@Directive()
 export class TimelineLeafletControl extends L.Control implements OnInit, AfterViewInit, OnChanges {
   map: L.Map
   private element: HTMLElement

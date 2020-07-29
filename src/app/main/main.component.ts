@@ -172,7 +172,7 @@ export class MainComponent implements AfterViewInit, OnInit {
         }
         this.updateLayout()
 
-        if (!this.graphComponent.currentItem) {
+        if (!this.graphComponent.currentItem && this.graphComponent.graph.nodes.size > 0) {
           // select a node for demonstration purpose
           const inputMode = this.graphComponent.inputMode as GraphViewerInputMode
           const item = this.graphComponent.graph.nodes.first()
