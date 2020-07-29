@@ -159,6 +159,10 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+# package lock files
+package-lock.json
+yarn.lock
+
 /dist/
 src/assets/yfiles/
 license.json
