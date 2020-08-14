@@ -28,7 +28,7 @@ Checkout this project, then extract the yFiles for HTML package to a directory n
 ```
 documents
  |-- space-time-graphs
- |-- yFiles-for-HTML-Complete-2.3.0.1-Evaluation
+ |-- yFiles-for-HTML-Complete-2.3.0.2-Evaluation
 ```
 
 Afterwards, enter the `space-time-graphs` directory and run the usual commands

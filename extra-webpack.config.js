@@ -6,7 +6,6 @@ module.exports = function(config) {
     config.plugins.push(
       new YWorksOptimizerPlugin({
         logLevel: 'info',
-        safeMode: true,
         blacklist: [
           'update',
           'ofType',
@@ -20,7 +19,8 @@ module.exports = function(config) {
           'move',
           'invert',
           'level',
-          'animate'
+          'animate',
+          'template'
         ]
       })
     )
