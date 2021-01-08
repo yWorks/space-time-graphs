@@ -1,7 +1,8 @@
 import { GraphMode, Shared } from '../shared'
 import { BaseClass, IVisualCreator, SvgVisual, RadialLayout, Point } from 'yfiles'
 
-export class CircleVisual extends BaseClass<IVisualCreator>(IVisualCreator)
+export class CircleVisual
+  extends BaseClass<IVisualCreator>(IVisualCreator)
   implements IVisualCreator {
   private radii: Array<number>
   private center: any
@@ -16,7 +17,7 @@ export class CircleVisual extends BaseClass<IVisualCreator>(IVisualCreator)
 
     this.updateCircleInformation(graph)
 
-    this.radii.forEach(radius => {
+    this.radii.forEach((radius) => {
       const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
       circle.setAttribute('cx', this.center.x)
       circle.setAttribute('cy', this.center.y)
@@ -29,7 +30,7 @@ export class CircleVisual extends BaseClass<IVisualCreator>(IVisualCreator)
     visual['render-data-cache'] = {
       center: this.center,
       radii: this.radii,
-      graphMode: Shared.graphMode
+      graphMode: Shared.graphMode,
     }
 
     return visual
@@ -82,7 +83,7 @@ export class CircleVisual extends BaseClass<IVisualCreator>(IVisualCreator)
     this.center = null
     this.radii = []
     if (Shared.graphMode === GraphMode.centric) {
-      graph.nodes.forEach(node => {
+      graph.nodes.forEach((node) => {
         const info = circleInfo.get(node)
         if (info) {
           if (this.center === null) {

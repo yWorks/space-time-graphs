@@ -7,22 +7,22 @@ export enum NodeActionTypes {
   Add = '[Graph Component] Add Node',
   Delete = '[Graph Component] Delete Node',
   DeleteAll = '[Graph Component] Delete All Node',
-  SetCurrentNode = '[Graph Component] Set Current Node'
+  SetCurrentNode = '[Graph Component] Set Current Node',
 }
 
 export enum EdgeActionTypes {
   Add = '[Graph Component] Add Edge',
   Delete = '[Graph Component] Delete Edge',
-  DeleteAll = '[Graph Component] Delete All Edge'
+  DeleteAll = '[Graph Component] Delete All Edge',
 }
 
 export enum TimelineActionTypes {
   Hide = '[Graph Component] Hide Timeline',
-  Show = '[Graph Component] Show Timeline'
+  Show = '[Graph Component] Show Timeline',
 }
 
 export enum GraphModeActionTypes {
-  Set = '[Graph Component] Set Mode'
+  Set = '[Graph Component] Set Mode',
 }
 
 export class AddNode implements Action {

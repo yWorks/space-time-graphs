@@ -5,14 +5,14 @@ import {
   SafeResourceUrl,
   SafeScript,
   SafeStyle,
-  SafeUrl
+  SafeUrl,
 } from '@angular/platform-browser'
 
 /**
  * Allowing to render HTML in the output.
  */
 @Pipe({
-  name: 'safe'
+  name: 'safe',
 })
 export class SafePipe {
   constructor(protected _sanitizer: DomSanitizer) {}

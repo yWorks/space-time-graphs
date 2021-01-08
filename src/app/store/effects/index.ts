@@ -18,13 +18,13 @@ export class LoadDataEffects {
   loadData$: Observable<GraphActions> = this.actions$.pipe(
     ofType(StoreActionTypes.Reset),
 
-    switchMap(action => {
+    switchMap((action) => {
       return this.data.someData().pipe(
-        switchMap(diagramData => {
+        switchMap((diagramData) => {
           const blob = diagramData
           const list: any[] = []
-          blob['nodes'].forEach(n => list.push(new AddNode(new NodeData(n))))
-          blob['edges'].forEach(e => list.push(new AddEdge(new EdgeData(e))))
+          blob['nodes'].forEach((n) => list.push(new AddNode(new NodeData(n))))
+          blob['edges'].forEach((e) => list.push(new AddEdge(new EdgeData(e))))
           return list
         })
       )

@@ -20,7 +20,7 @@ import {
   TemplateNodeStyleRenderer,
   IRenderContext,
   Visual,
-  SvgVisual
+  SvgVisual,
 } from 'yfiles'
 
 class ContaminationTemplateRenderer extends TemplateNodeStyleRenderer {
@@ -48,21 +48,21 @@ export class Styling {
     mapEdge: {
       color: '#4682B4',
       width: 2.0,
-      dash: 'solid'
+      dash: 'solid',
     },
     mapNode: {
       fill: '#00CED1',
-      stroke: '#FC5130'
+      stroke: '#FC5130',
     },
     centricEdge: {
       color: '#FFFFFF',
       width: 2.0,
-      dash: 'solid'
+      dash: 'solid',
     },
     centricNode: {
       fill: '#37d124',
-      stroke: '#ffe55f'
-    }
+      stroke: '#ffe55f',
+    },
   }
 
   /**
@@ -80,7 +80,7 @@ export class Styling {
         mapEdgeStrokeRGB[2],
         mapEdgeStrokeRGB[3]
       ),
-      dashStyle: Styling.dash2y(definition.mapEdge.dash)
+      dashStyle: Styling.dash2y(definition.mapEdge.dash),
     })
 
     const centricEdgeStrokeRGB = Styling.hex2rgba(definition.centricEdge.color)
@@ -92,26 +92,26 @@ export class Styling {
         centricEdgeStrokeRGB[2],
         centricEdgeStrokeRGB[3]
       ),
-      dashStyle: Styling.dash2y(definition.centricEdge.dash)
+      dashStyle: Styling.dash2y(definition.centricEdge.dash),
     })
 
     // these converters are used in the SVG templates inside 'index.html'
     // things like <rect fill="{Binding , Converter=centricFill}" />
 
     // @ts-ignore
-    TemplateNodeStyle.CONVERTERS.mapFill = val => {
+    TemplateNodeStyle.CONVERTERS.mapFill = (val) => {
       return definition.mapNode.fill
     }
     // @ts-ignore
-    TemplateNodeStyle.CONVERTERS.mapStroke = val => {
+    TemplateNodeStyle.CONVERTERS.mapStroke = (val) => {
       return definition.mapNode.stroke
     }
     // @ts-ignore
-    TemplateNodeStyle.CONVERTERS.centricFill = val => {
+    TemplateNodeStyle.CONVERTERS.centricFill = (val) => {
       return definition.centricNode.fill
     }
     // @ts-ignore
-    TemplateNodeStyle.CONVERTERS.centricStroke = val => {
+    TemplateNodeStyle.CONVERTERS.centricStroke = (val) => {
       return definition.centricNode.stroke
     }
   }
@@ -161,26 +161,26 @@ export class Styling {
   }
 
   static applyMapStyles(graph) {
-    graph.edges.forEach(edge => {
+    graph.edges.forEach((edge) => {
       graph.setStyle(edge, Styling.createMapEdgeStyle(Styling.getArcHeight(edge)))
     })
-    graph.nodes.forEach(node => {
+    graph.nodes.forEach((node) => {
       if (node.tag.style === 'group') {
         graph.setStyle(node, Styling.createLayoutGroupNodeStyle())
       } else {
         graph.setStyle(node, Styling.createMapNodeStyle())
       }
-      node.ports.forEach(port => {
+      node.ports.forEach((port) => {
         graph.setPortLocationParameter(port, graph.nodeDefaults.ports.locationParameter.clone())
       })
     })
   }
 
   static applyLayoutStyles(graph) {
-    graph.edges.forEach(edge => {
+    graph.edges.forEach((edge) => {
       graph.setStyle(edge, Styling.createLayoutEdgeStyle())
     })
-    graph.nodes.forEach(node => {
+    graph.nodes.forEach((node) => {
       if (node.tag.style === 'group') {
         graph.setStyle(node, Styling.createLayoutGroupNodeStyle())
       } else {
@@ -197,20 +197,20 @@ export class Styling {
       renderer: new ContaminationTemplateRenderer(),
       renderTemplateId: 'geo-template',
       minimumSize: new Size(50, 50),
-      normalizedOutline: outlinePath
+      normalizedOutline: outlinePath,
     })
   }
 
   static createMapEdgeStyle(height = null) {
     return new ArcEdgeStyle({
       stroke: Styling.mapEdgeStroke,
-      height: height || 100
+      height: height || 100,
     })
   }
 
   static createLayoutEdgeStyle() {
     return new PolylineEdgeStyle({
-      stroke: Styling.centricEdgeStroke
+      stroke: Styling.centricEdgeStroke,
     })
   }
 
@@ -223,7 +223,7 @@ export class Styling {
       renderer: new ContaminationTemplateRenderer(),
       renderTemplateId: 'layout-template',
       minimumSize: new Size(50, 50),
-      normalizedOutline: outlinePath
+      normalizedOutline: outlinePath,
     })
     if (_.isNil(badges) || badges.length === 0) {
       return baseStyle
@@ -240,7 +240,7 @@ export class Styling {
       renderer: new ContaminationTemplateRenderer(),
       renderTemplateId: 'group-template',
       minimumSize: new Size(150, 50),
-      normalizedOutline: outlinePath
+      normalizedOutline: outlinePath,
     })
   }
 
@@ -249,17 +249,17 @@ export class Styling {
       nodeStyle: new ShapeNodeStyle({
         shape: ShapeNodeShape.RECTANGLE,
         fill: Fill.STEEL_BLUE,
-        stroke: null
+        stroke: null,
       }),
       labelStyle: new DefaultLabelStyle({
-        textFill: Fill.WHITE
+        textFill: Fill.WHITE,
       }),
-      labelStyleInsets: new Insets(3, 5, 3, 5)
+      labelStyleInsets: new Insets(3, 5, 3, 5),
     })
   }
 
   static updateEdgeArcs(graph) {
-    graph.edges.forEach(edge => {
+    graph.edges.forEach((edge) => {
       edge.style.height = Styling.getArcHeight(edge)
     })
   }

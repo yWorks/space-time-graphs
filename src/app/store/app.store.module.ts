@@ -12,7 +12,7 @@ const initialState: IAppState = {
   nodes: [],
   currentNode: null,
   edges: [],
-  graphMode: GraphMode.geo
+  graphMode: GraphMode.geo,
 }
 
 @NgModule({
@@ -23,10 +23,10 @@ const initialState: IAppState = {
       initialState: initialState,
       runtimeChecks: {
         strictStateImmutability: false,
-        strictActionImmutability: false
-      }
+        strictActionImmutability: false,
+      },
     }),
-    CommonModule
-  ]
+    CommonModule,
+  ],
 })
 export class AppStoreModule {}

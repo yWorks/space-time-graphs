@@ -14,7 +14,7 @@ class HeatMapBackground extends HtmlCanvasVisual {
     this.ctx = null
     this.getHeat =
       getHeat ||
-      function(element) {
+      function (element) {
         return 1
       }
   }
@@ -60,7 +60,7 @@ class HeatMapBackground extends HtmlCanvasVisual {
     )
 
     let lastHeat = -1
-    renderContext.canvasComponent.graph.nodes.forEach(node => {
+    renderContext.canvasComponent.graph.nodes.forEach((node) => {
       const c = renderContext.toViewCoordinates(node.layout.center)
       let heat = this.getHeat(node)
       if (heat > 0) {
@@ -76,7 +76,7 @@ class HeatMapBackground extends HtmlCanvasVisual {
       }
     })
     lastHeat = -1
-    renderContext.canvasComponent.graph.edges.forEach(edge => {
+    renderContext.canvasComponent.graph.edges.forEach((edge) => {
       let heat = this.getHeat(edge)
       if (heat > 0) {
         if (heat !== lastHeat) {
@@ -85,10 +85,7 @@ class HeatMapBackground extends HtmlCanvasVisual {
           heat = lastHeat
         }
 
-        const path = edge.style.renderer
-          .getPathGeometry(edge, edge.style)
-          .getPath()
-          .flatten(1)
+        const path = edge.style.renderer.getPathGeometry(edge, edge.style).getPath().flatten(1)
 
         backgroundContext.beginPath()
         const cursor = path.createCursor()
@@ -150,7 +147,7 @@ export function addHeatMap(graphComponent, getHeat) {
     },
     updateVisual(context, oldVisual) {
       return oldVisual
-    }
+    },
   })
   graphComponent.backgroundGroup.addChild(creator, ICanvasObjectDescriptor.ALWAYS_DIRTY_INSTANCE)
 }

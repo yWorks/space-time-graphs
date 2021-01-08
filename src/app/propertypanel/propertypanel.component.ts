@@ -11,7 +11,7 @@ import { AboutDialogComponent } from '../main/aboutdialog/aboutdialog.component'
 @Component({
   selector: 'app-propertypanel',
   templateUrl: './propertypanel.component.html',
-  styleUrls: ['./propertypanel.component.css']
+  styleUrls: ['./propertypanel.component.css'],
 })
 export class PropertyPanelComponent implements OnInit {
   @Input('nodes') nodes: Array<INode>
@@ -24,7 +24,7 @@ export class PropertyPanelComponent implements OnInit {
   successors: any
 
   constructor(private store: Store<IAppState>, public dialog: MatDialog) {
-    this.store.pipe(select(state => state.currentNode)).subscribe(cnode => {
+    this.store.pipe(select((state) => state.currentNode)).subscribe((cnode) => {
       if (_.isNil(cnode)) {
         this.$currentNode = null
       } else {
@@ -42,12 +42,12 @@ export class PropertyPanelComponent implements OnInit {
 
   ngOnInit() {
     const self = this
-    this.store.pipe(select('nodes')).subscribe(ns => {
+    this.store.pipe(select('nodes')).subscribe((ns) => {
       self.nodeCount = ns.length
       self.nodes = ns
       this.vertices = ns
     })
-    this.store.pipe(select('edges')).subscribe(es => {
+    this.store.pipe(select('edges')).subscribe((es) => {
       self.edgeCount = es.length
       this.links = es
     })
@@ -55,7 +55,7 @@ export class PropertyPanelComponent implements OnInit {
 
   openDialog(): void {
     this.dialog.open(AboutDialogComponent, {
-      width: '600px'
+      width: '600px',
     })
   }
 }

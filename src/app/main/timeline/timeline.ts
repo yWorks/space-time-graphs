@@ -83,11 +83,7 @@ export class TimelineLeafletControl extends L.Control implements OnInit, AfterVi
       self.map.keyboard.enable()
     })
 
-    this.svg = d3
-      .select(this.element)
-      .append('svg')
-      .style('width', '100%')
-      .style('height', '200')
+    this.svg = d3.select(this.element).append('svg').style('width', '100%').style('height', '200')
     return this.element
   }
 
@@ -123,16 +119,13 @@ export class TimelineLeafletControl extends L.Control implements OnInit, AfterVi
 
     const xAxis = d3.axisBottom(x).tickSize(0),
       xAxis2 = d3.axisBottom(x2).tickSize(0),
-      yAxis = d3
-        .axisLeft(y)
-        .tickSize(0)
-        .tickValues([0.0, 0.5, 0.1])
+      yAxis = d3.axisLeft(y).tickSize(0).tickValues([0.0, 0.5, 0.1])
 
     const brush = d3
       .brushX()
       .extent([
         [0, 20],
-        [contentWidth, thumbHeight]
+        [contentWidth, thumbHeight],
       ])
       .on('brush', brushed)
 
@@ -141,11 +134,11 @@ export class TimelineLeafletControl extends L.Control implements OnInit, AfterVi
       .scaleExtent([1, Infinity])
       .translateExtent([
         [0, 0],
-        [contentWidth, contentHeight]
+        [contentWidth, contentHeight],
       ])
       .extent([
         [0, 0],
-        [contentWidth, contentHeight]
+        [contentWidth, contentHeight],
       ])
       .on('zoom', zoomed)
 
@@ -177,11 +170,7 @@ export class TimelineLeafletControl extends L.Control implements OnInit, AfterVi
       .attr('height', contentHeight)
       .attr('transform', 'translate(' + mainMargin.left + ',' + mainMargin.top + ')')
       .call(zoom)
-    context
-      .append('g')
-      .attr('class', 'brush')
-      .call(brush)
-      .call(brush.move, x.range())
+    context.append('g').attr('class', 'brush').call(brush).call(brush.move, x.range())
     const secondx = context
       .append('g')
       .attr('class', 'axis x-axis')
@@ -191,10 +180,7 @@ export class TimelineLeafletControl extends L.Control implements OnInit, AfterVi
       .attr('class', 'axis x-axis')
       .attr('transform', 'translate(0,' + contentHeight + ')')
 
-    focus
-      .append('g')
-      .attr('class', 'axis axis--y')
-      .call(yAxis)
+    focus.append('g').attr('class', 'axis axis--y').call(yAxis)
 
     focus
       .append('text')
@@ -262,15 +248,13 @@ export class TimelineLeafletControl extends L.Control implements OnInit, AfterVi
       }
 
       const maxHeight = calcHeights()
-      data.forEach(d => {
+      data.forEach((d) => {
         d.eventDate = parseTime(d.date)
       })
 
-      let xMin = d3.min(data, d => d.eventDate)
-      xMin = moment(xMin)
-        .add(-10, 'd')
-        .toDate()
-      let xMax = d3.max(data, d => d.eventDate)
+      let xMin = d3.min(data, (d) => d.eventDate)
+      xMin = moment(xMin).add(-10, 'd').toDate()
+      let xMax = d3.max(data, (d) => d.eventDate)
       xMax = moment(xMax)
         .add(+10, 'd')
         .toDate()
@@ -285,7 +269,7 @@ export class TimelineLeafletControl extends L.Control implements OnInit, AfterVi
       eventsCount = (dataArray, domainRange) =>
         d3.sum(
           dataArray,
-          d => d.eventDate >= domainRange.domain()[0] && d.eventDate <= domainRange.domain()[1]
+          (d) => d.eventDate >= domainRange.domain()[0] && d.eventDate <= domainRange.domain()[1]
         )
       self.timeWindow = x.domain()
       updateInfo()
@@ -297,8 +281,8 @@ export class TimelineLeafletControl extends L.Control implements OnInit, AfterVi
         .attr('class', 'event-dot')
         .attr('r', 5)
         .style('opacity', 0.5)
-        .attr('cx', d => x(d.eventDate))
-        .attr('cy', d => y(d.height))
+        .attr('cx', (d) => x(d.eventDate))
+        .attr('cy', (d) => y(d.height))
 
       miniDots
         .selectAll('.event-dot')
@@ -308,8 +292,8 @@ export class TimelineLeafletControl extends L.Control implements OnInit, AfterVi
         .attr('class', 'event-dot')
         .attr('r', 4)
         .style('opacity', 0.7)
-        .attr('cx', d => x2(d.eventDate))
-        .attr('cy', d => y2(d.height))
+        .attr('cx', (d) => x2(d.eventDate))
+        .attr('cy', (d) => y2(d.height))
     }
 
     function brushed() {
@@ -324,8 +308,8 @@ export class TimelineLeafletControl extends L.Control implements OnInit, AfterVi
       x.domain(s.map(x2.invert, x2))
       focus
         .selectAll('.event-dot')
-        .attr('cx', d => x(d.eventDate))
-        .attr('cy', d => y(d.height))
+        .attr('cx', (d) => x(d.eventDate))
+        .attr('cy', (d) => y(d.height))
       focus.select('.x-axis').call(xAxis)
       self.svg
         .select('.zoom')
@@ -345,8 +329,8 @@ export class TimelineLeafletControl extends L.Control implements OnInit, AfterVi
       x.domain(t.rescaleX(x2).domain())
       focus
         .selectAll('.event-dot')
-        .attr('cx', d => x(d.eventDate))
-        .attr('cy', d => y(d.height))
+        .attr('cx', (d) => x(d.eventDate))
+        .attr('cy', (d) => y(d.height))
       focus.select('.x-axis').call(xAxis)
       context.select('.brush').call(brush.move, x.range().map(t.invertX, t))
     }
@@ -390,14 +374,14 @@ export class TimelineLeafletControl extends L.Control implements OnInit, AfterVi
       }
     }
 
-    Shared.store.pipe(select('nodes')).subscribe(ns => {
+    Shared.store.pipe(select('nodes')).subscribe((ns) => {
       this.nodes = ns
       if (!_.isNil(this.nodes) && this.nodes.length > 0) {
         processNodes(this.nodes)
       }
     })
 
-    Shared.store.pipe(select('currentNode')).subscribe(n => {
+    Shared.store.pipe(select('currentNode')).subscribe((n) => {
       this.currentNode = n
       highlightCurrent()
     })

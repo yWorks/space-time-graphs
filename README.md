@@ -9,10 +9,10 @@ It shows how time windows can filter out diagrams and how geographical mapping o
 
 ## See also
 
-* [Watch the introductory video](https://www.youtube.com/channel/UC6GqOEPI6Xrhy4ylDKHP0Aw) of this app
-* [Try the app online](https://live.yworks.com/demos/use-case/space-time-graphs)
-* [Read the article](https://www.yworks.com/use-case/navigating-your-graph-through-space-and-time) about _Navigating Your Graph Through Space and Time_
-* [Learn more about yFiles](https://www.yworks.com/products/yfiles), the software library for visualizing, editing, and analyzing graphs
+- [Watch the introductory video](https://www.youtube.com/channel/UC6GqOEPI6Xrhy4ylDKHP0Aw) of this app
+- [Try the app online](https://live.yworks.com/demos/use-case/space-time-graphs)
+- [Read the article](https://www.yworks.com/use-case/navigating-your-graph-through-space-and-time) about _Navigating Your Graph Through Space and Time_
+- [Learn more about yFiles](https://www.yworks.com/products/yfiles), the software library for visualizing, editing, and analyzing graphs
 
 If you have any questions or suggestions, send us an email at [consulting@yworks.com](mailto:consulting@yworks.com)
 or call [+49 7071 9709050](tel:+4970719709050).
@@ -28,26 +28,30 @@ Checkout this project, then extract the yFiles for HTML package to a directory n
 ```
 documents
  |-- space-time-graphs
- |-- yFiles-for-HTML-Complete-2.3.0.2-Evaluation
+ |-- yFiles-for-HTML-Complete-2.3.0.4-Evaluation
 ```
 
 Afterwards, enter the `space-time-graphs` directory and run the usual commands
+
 ```
 npm i
 ```
+
 followed by
+
 ```
 npm start
 ```
 
 ## Some notes on the implementation
+
 The application is based on Angular CLI with reusable components for your convenience. However, one could just as well have based things on React or Vue or similar single-page app frameworks: our choice does not convey in any way some particular conviction. In fact, we support all of those and have both documentation and examples illustrating the way you can integrate yFiles into applications using any of these frameworks.
 
 In order to keep the app easy to use and explore, we made some choices:
 
-* there is no graph store or REST service as backend serving data. Instead, you will find a straightforward JSON file representing the graph structure and the presented data in general. You can adapt this JSON or add a webservice according to your needs and context.
-* the components consume data via a [Redux store](https://ngrx.io/) in order to have a 'reactive' setup. There are many ways one can implement inter-component communication, and, here again, we picked Redux without advocating preference.
-* we used TypeScript, but you can assemble things just as well with plain JavaScript.
+- there is no graph store or REST service as backend serving data. Instead, you will find a straightforward JSON file representing the graph structure and the presented data in general. You can adapt this JSON or add a webservice according to your needs and context.
+- the components consume data via a [Redux store](https://ngrx.io/) in order to have a 'reactive' setup. There are many ways one can implement inter-component communication, and, here again, we picked Redux without advocating preference.
+- we used TypeScript, but you can assemble things just as well with plain JavaScript.
 
 Of course, much can be said about the actual implementation and the inevitable glitches. Feel free to give your feedback via [Github](https://github.com/yWorks/space-time-graphs) or [tweet us](https://twitter.com/yworks)!
 
@@ -75,11 +79,11 @@ or call [+49 7071 9709050](tel:+4970719709050).
 All data is fictitious and any correspondence is accidental.
 The used faces are from [http://uifaces.com](http://uifaces.com) and are free to use for any purpose.
 
-
 ## License
+
 The MIT License (MIT)
 
-Copyright (c) 2020 yWorks GmbH
+Copyright (c) 2021 yWorks GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

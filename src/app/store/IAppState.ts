@@ -2,7 +2,7 @@
  * Defines the application state.
  */
 import { IEdge, INode } from '../main/data/entities'
-import {GraphMode} from '../main/shared'
+import { GraphMode } from '../main/shared'
 
 export interface IAppState {
   currentNode: INode

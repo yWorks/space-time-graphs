@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "preinstall": "cd ../yFiles-for-HTML-Complete-2.3.0.2-Evaluation/ && npm pack lib/es-modules/",
+    "preinstall": "cd ../yFiles-for-HTML-Complete-2.3.0.4-Evaluation/ && npm pack lib/es-modules/",
     "postinstall": "node copy-license.js",
     "ng": "ng",
     "start": "ng serve --open --port 4001",
@@ -34,7 +34,7 @@
     "moment": "^2.27.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "yfiles": "../yFiles-for-HTML-Complete-2.3.0.2-Evaluation/yfiles-23.0.2-eval.tgz",
+    "yfiles": "../yFiles-for-HTML-Complete-2.3.0.4-Evaluation/yfiles-23.0.4-eval.tgz",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

@@ -45,12 +45,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -103,6 +99,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "space-time-graphs"
 }

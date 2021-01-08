@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  serverAddress: 'http://localhost:4002'
-};
+  serverAddress: 'http://localhost:4002',
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

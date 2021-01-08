@@ -17,8 +17,8 @@ import { Reset } from '../../store/actions/storeActions'
   templateUrl: './mainview.component.html',
   styleUrls: ['./mainview.component.css'],
   host: {
-    class: 'full'
-  }
+    class: 'full',
+  },
 })
 export class MainViewComponent implements AfterViewInit, OnInit {
   @ViewChild(MainComponent, { static: true }) private gcComponent: MainComponent
@@ -29,7 +29,7 @@ export class MainViewComponent implements AfterViewInit, OnInit {
   edges: IEdge[]
 
   constructor(private store: Store<IAppState>) {
-    this.store.pipe(select('graphMode')).subscribe(mode => {
+    this.store.pipe(select('graphMode')).subscribe((mode) => {
       if (!_.isNil(mode)) {
         this.graphMode = mode
       }
@@ -49,10 +49,10 @@ export class MainViewComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit(): void {
-    this.store.pipe(select('edges')).subscribe(es => {
+    this.store.pipe(select('edges')).subscribe((es) => {
       this.edges = es
     })
-    this.store.pipe(select('nodes')).subscribe(ns => {
+    this.store.pipe(select('nodes')).subscribe((ns) => {
       this.nodes = ns
     })
 

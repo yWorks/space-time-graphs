@@ -6,7 +6,7 @@ import {
   ShapeNodeStyle,
   Rect,
   SvgVisualGroup,
-  SvgVisual
+  SvgVisual,
 } from 'yfiles'
 
 export class NodeStyleDecorator extends NodeStyleBase {
@@ -90,7 +90,7 @@ export class NodeStyleDecorator extends NodeStyleBase {
 
       // save image URL with the visual for the update method
       group['data-renderDataCache'] = {
-        imageUrls: this.imageUrls
+        imageUrls: this.imageUrls,
       }
     }
 
@@ -152,7 +152,7 @@ export class NodeStyleDecorator extends NodeStyleBase {
 
     // update the stored image URL for the next update visual call
     oldVisual['data-renderDataCache'] = {
-      imageUrls: this.imageUrls
+      imageUrls: this.imageUrls,
     }
 
     return oldVisual
@@ -173,7 +173,7 @@ export class NodeStyleDecorator extends NodeStyleBase {
 
     const p = {
       x: nodeLayout.x + 19 + 30 * Math.cos(-Math.PI / 2 + (index - 1) * Math.PI * 0.2),
-      y: nodeLayout.y + 19 + 30 * Math.sin(-Math.PI / 2 + (index - 1) * Math.PI * 0.2)
+      y: nodeLayout.y + 19 + 30 * Math.sin(-Math.PI / 2 + (index - 1) * Math.PI * 0.2),
     } // contour has index 0
     return new Rect(p.x - 5, p.y - 4, size.width, size.height)
   }

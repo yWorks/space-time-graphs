@@ -6,7 +6,7 @@ import {
   Input,
   NgZone,
   OnInit,
-  ViewChild
+  ViewChild,
 } from '@angular/core'
 import * as L from 'leaflet'
 import { GraphMode, Shared } from './shared'
@@ -28,7 +28,7 @@ import { FilteredGraphWrapper, GraphComponent, GraphViewerInputMode } from 'yfil
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements AfterViewInit, OnInit {
   @ViewChild('graphComponentRef', { static: true }) graphComponentRef: ElementRef
@@ -68,7 +68,7 @@ export class MainComponent implements AfterViewInit, OnInit {
   constructor(private store: Store<IAppState>, private zone: NgZone) {
     Styling.setTheme()
     Shared.store = store
-    this.store.pipe(select('graphMode')).subscribe(mode => {
+    this.store.pipe(select('graphMode')).subscribe((mode) => {
       if (!_.isNil(mode)) {
         setTimeout(() => this.onResize(), 0)
       }
@@ -99,13 +99,13 @@ export class MainComponent implements AfterViewInit, OnInit {
     const osmAttrib =
       'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
 
-    this.geo.setView(L.latLng( 40.709222,1.154546), 5)
+    this.geo.setView(L.latLng(40.709222, 1.154546), 5)
     this.geo.addLayer(
       // new L.TileLayer(osmUrl, {
       new GrayTileLayer(osmUrl, {
         minZoom: 3,
         maxZoom: 12,
-        attribution: osmAttrib
+        attribution: osmAttrib,
       })
     )
 
@@ -117,7 +117,7 @@ export class MainComponent implements AfterViewInit, OnInit {
     Shared.rootComponent = this
     const self = this
     try {
-      self.assembleGraph().then(wrapper => {
+      self.assembleGraph().then((wrapper) => {
         if (_.isNil(wrapper)) {
           return
         }
@@ -166,7 +166,7 @@ export class MainComponent implements AfterViewInit, OnInit {
     }
     const self = this
     try {
-      self.assembleGraph().then(wrapper => {
+      self.assembleGraph().then((wrapper) => {
         if (_.isNil(wrapper)) {
           return
         }
@@ -201,12 +201,12 @@ export class MainComponent implements AfterViewInit, OnInit {
     const graph = Shared.graph.wrappedGraph
     const nodeMap = {}
     graph.clear()
-    this.nodes.forEach(n => {
+    this.nodes.forEach((n) => {
       nodeMap[n.id] = graph.createNode({
-        tag: n
+        tag: n,
       })
     })
-    this.edges.forEach(e => {
+    this.edges.forEach((e) => {
       const fromNode = nodeMap[e.from]
       const toNode = nodeMap[e.to]
       if (fromNode && toNode) {
@@ -228,7 +228,7 @@ export class MainComponent implements AfterViewInit, OnInit {
   createFilteredGraph(graph) {
     Shared.graph = new FilteredGraphWrapper(
       graph,
-      node => {
+      (node) => {
         if (Shared.timelineControl) {
           return Shared.timelineControl.isInTimeFrame(node.tag)
         } else {

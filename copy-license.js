@@ -35,10 +35,13 @@ if (!fs.existsSync(destDir)) {
 if (fs.existsSync(licenseFile)) {
   console.log(`\nUsing yFiles license from '${licenseFile}'.`)
   const licenseData = require(licenseFile)
-  fs.writeFileSync(path.join(destDir, 'license.js'), `export default ${JSON.stringify(licenseData, null, 2)}`)
+  fs.writeFileSync(
+    path.join(destDir, 'license.js'),
+    `export default ${JSON.stringify(licenseData, null, 2)}`
+  )
 } else {
   console.log(
     `\nyFiles license was NOT copied from '${licenseFile}'.` +
-    `\nPlease add your own yFiles license data to the demo.`
+      `\nPlease add your own yFiles license data to the demo.`
   )
 }

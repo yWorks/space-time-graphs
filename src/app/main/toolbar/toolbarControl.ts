@@ -13,7 +13,7 @@ import {
   IRectangle,
   List,
   Mapper,
-  TimeSpan
+  TimeSpan,
 } from 'yfiles'
 
 export class ToggleGraphControl extends L.Control {
@@ -77,9 +77,9 @@ export class ToggleGraphControl extends L.Control {
         null,
         new TimeSpan(700)
       )
-      this.graphComponent.graph.edges.forEach(edge => this.graphComponent.graph.clearBends(edge))
+      this.graphComponent.graph.edges.forEach((edge) => this.graphComponent.graph.clearBends(edge))
       const anims: ICollection<IAnimation> = new List<IAnimation>({
-        items: [zoomAnimation, graphAnimation]
+        items: [zoomAnimation, graphAnimation],
       })
       const animation = IAnimation.createParallelAnimation(anims)
       const animator = new Animator(this.graphComponent)
@@ -103,7 +103,7 @@ export class ToggleGraphControl extends L.Control {
     return div
   }
 
-  setGraphMode(map:L.Map, graphMode:GraphMode):void {
+  setGraphMode(map: L.Map, graphMode: GraphMode): void {
     if (Shared.graphMode === graphMode) {
       return
     }
@@ -134,16 +134,16 @@ export class ToggleGraphControl extends L.Control {
     Styling.applyLayoutStyles(graph.wrappedGraph)
     if (!this.layoutRunning) {
       this.layoutRunning = true
-      Shared.graph.edges.forEach(edge => graph.clearBends(edge))
+      Shared.graph.edges.forEach((edge) => graph.clearBends(edge))
 
-      let promise:Promise<any> = null
-      switch(graphMode) {
+      let promise: Promise<any> = null
+      switch (graphMode) {
         case GraphMode.tree:
           promise = this.graphLayer.treeLayout()
-          break;
+          break
         case GraphMode.centric:
           promise = this.graphLayer.centricLayout()
-          break;
+          break
       }
       if (promise) {
         promise.then(() => {

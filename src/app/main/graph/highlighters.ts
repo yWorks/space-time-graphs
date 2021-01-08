@@ -10,7 +10,7 @@ import {
   NodeStyleDecorationInstaller,
   ShapeNodeStyle,
   Stroke,
-  StyleDecorationZoomPolicy
+  StyleDecorationZoomPolicy,
 } from 'yfiles'
 
 export class MainHighlightManager extends HighlightIndicatorManager<INode> {
@@ -44,9 +44,9 @@ export class MainHighlightManager extends HighlightIndicatorManager<INode> {
             dashStyle: 'dash',
             lineCap: 'round',
             thickness: 4,
-            fill: '#FFFAFF'
-          })
-        })
+            fill: '#FFFAFF',
+          }),
+        }),
       })
     }
     return super.getInstaller(item)

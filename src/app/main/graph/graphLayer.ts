@@ -26,7 +26,7 @@ import {
   ScrollBarVisibility,
   SizeChangedDetectionMode,
   SvgVisual,
-  TimeSpan
+  TimeSpan,
 } from 'yfiles'
 import { CircleVisual } from './circleVisual'
 import * as L from 'leaflet'
@@ -64,9 +64,9 @@ export class GrayTileLayer extends L.TileLayer {
         quotaGreen: 71,
         quotaBlue: 8,
         quotaDividerTune: 0,
-        quotaDivider: function() {
+        quotaDivider: function () {
           return this.quotaRed + this.quotaGreen + this.quotaBlue + this.quotaDividerTune
-        }
+        },
       },
       options
     )
@@ -75,7 +75,7 @@ export class GrayTileLayer extends L.TileLayer {
     super(url, options)
 
     // @ts-ignore
-    this.on('tileload', e => {
+    this.on('tileload', (e) => {
       // @ts-ignore
       this._renderGrayscale(e.tile)
     })
@@ -138,7 +138,11 @@ export class GraphLayer extends L.Layer {
     this.graphComponent = new GraphComponent()
     // define the shared graph to be used later by all elements
     // the filtering definition happens after TimelineControl etc. are created.
-    Shared.graph = new FilteredGraphWrapper(this.graphComponent.graph, () => true, () => true)
+    Shared.graph = new FilteredGraphWrapper(
+      this.graphComponent.graph,
+      () => true,
+      () => true
+    )
     this.graphComponent.zoom = 1
     this.graphComponent.autoDrag = false
     this.graphComponent.horizontalScrollBarPolicy = ScrollBarVisibility.NEVER
@@ -213,7 +217,7 @@ export class GraphLayer extends L.Layer {
         ellipse.rx.baseVal.value = bounds.width / 2 + margin
         ellipse.ry.baseVal.value = bounds.height / 2 + margin
         return oldVisual
-      }
+      },
     })
     // register the template to be used for drawing the selection indicator of nodes
     this.graphComponent.resources.set(
@@ -301,7 +305,7 @@ export class GraphLayer extends L.Layer {
 
     if (Shared.graphMode === GraphMode.geo) {
       // transform geo-locations and update the node locations
-      graph.nodes.forEach(node => {
+      graph.nodes.forEach((node) => {
         // @ts-ignore
         const layerPoint = this._map.latLngToLayerPoint(L.latLng(node.tag.lat, node.tag.lng))
         const width = node.layout.width
@@ -357,7 +361,7 @@ export class GraphLayer extends L.Layer {
     radialLayout.layerSpacing = 70
     radialLayout.centerNodesPolicy = CenterNodesPolicy.CUSTOM
     const graph: FilteredGraphWrapper = Shared.graph
-    const center = centerNode || graph.nodes.find(node => node.tag.name === 'Peter')
+    const center = centerNode || graph.nodes.find((node) => node.tag.name === 'Peter')
 
     const layoutData = new RadialLayoutData()
     layoutData.centerNodes.items = new List({ items: [center] })

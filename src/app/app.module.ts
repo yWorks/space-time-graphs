@@ -10,11 +10,11 @@ import { EffectsModule } from '@ngrx/effects'
 import { HttpClientModule } from '@angular/common/http'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MatBadgeModule } from '@angular/material/badge';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatIconModule } from '@angular/material/icon';
-import { MatTableModule } from '@angular/material/table';
+import { MatBadgeModule } from '@angular/material/badge'
+import { MatButtonModule } from '@angular/material/button'
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatIconModule } from '@angular/material/icon'
+import { MatTableModule } from '@angular/material/table'
 import { SafePipe } from './safe.pipe'
 import { MainViewComponent } from './views/main/mainview.component'
 import { PropertyPanelComponent } from './propertypanel/propertypanel.component'
@@ -29,7 +29,7 @@ import { AboutDialogComponent } from './main/aboutdialog/aboutdialog.component'
     PropertyPanelComponent,
     MainComponent,
     SafePipe,
-    AboutDialogComponent
+    AboutDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,10 +42,10 @@ import { AboutDialogComponent } from './main/aboutdialog/aboutdialog.component'
     EffectsModule.forRoot([LoadDataEffects]),
     MatDialogModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [AboutDialogComponent]
+  entryComponents: [AboutDialogComponent],
 })
 export class AppModule {}

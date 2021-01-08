@@ -23,4 +23,4 @@ Highlight2: #00ae24 (green)
 License.value = licenseData
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
-  .catch(err => console.log(err))
+  .catch((err) => console.log(err))

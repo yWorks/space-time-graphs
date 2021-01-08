@@ -7,13 +7,13 @@ import { environment } from '../../environments/environment'
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
     // 'Authorization': 'my-auth-token'
-  })
+  }),
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService implements OnInit {
   private _address: string

@@ -11,7 +11,7 @@ import { IAppState } from '../store/IAppState'
 export enum GraphMode {
   geo = 'Geographic layout',
   centric = 'Concentric layout',
-  tree = 'Tree layout'
+  tree = 'Tree layout',
 }
 
 export class Shared {
@@ -67,7 +67,7 @@ export class Utils {
       } else {
         const result = classes
           .split(' ')
-          .filter(s => s !== className)
+          .filter((s) => s !== className)
           .join(' ')
         e.setAttribute('class', result)
       }
@@ -80,5 +80,4 @@ export class Utils {
     const r = new RegExp(`\\b${className}\\b`, '')
     return r.test(classes)
   }
-
 }

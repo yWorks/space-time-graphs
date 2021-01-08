@@ -30,7 +30,8 @@ export interface IEdge extends IGraphElement {
   toJson(): () => any
 }
 
-export class NodeData extends BaseClass<IPropertyObservable>(IPropertyObservable)
+export class NodeData
+  extends BaseClass<IPropertyObservable>(IPropertyObservable)
   implements IPropertyObservable, INode {
   private listeners = []
   _id: number
@@ -50,7 +51,7 @@ export class NodeData extends BaseClass<IPropertyObservable>(IPropertyObservable
 
   set lat(value) {
     this._lat = value
-    this.listeners.forEach(listener => listener(this, new PropertyChangedEventArgs('lat')))
+    this.listeners.forEach((listener) => listener(this, new PropertyChangedEventArgs('lat')))
   }
 
   get level(): number {
@@ -59,7 +60,7 @@ export class NodeData extends BaseClass<IPropertyObservable>(IPropertyObservable
 
   set level(value) {
     this._level = value
-    this.listeners.forEach(listener => listener(this, new PropertyChangedEventArgs('level')))
+    this.listeners.forEach((listener) => listener(this, new PropertyChangedEventArgs('level')))
   }
 
   get badges(): string[] {
@@ -68,7 +69,7 @@ export class NodeData extends BaseClass<IPropertyObservable>(IPropertyObservable
 
   set badges(value) {
     this._badges = value
-    this.listeners.forEach(listener => listener(this, new PropertyChangedEventArgs('badges')))
+    this.listeners.forEach((listener) => listener(this, new PropertyChangedEventArgs('badges')))
   }
 
   get lng(): number {
@@ -77,7 +78,7 @@ export class NodeData extends BaseClass<IPropertyObservable>(IPropertyObservable
 
   set lng(value) {
     this._lng = value
-    this.listeners.forEach(listener => listener(this, new PropertyChangedEventArgs('lng')))
+    this.listeners.forEach((listener) => listener(this, new PropertyChangedEventArgs('lng')))
   }
 
   get name(): string {
@@ -86,7 +87,7 @@ export class NodeData extends BaseClass<IPropertyObservable>(IPropertyObservable
 
   set name(value) {
     this._name = value
-    this.listeners.forEach(listener => listener(this, new PropertyChangedEventArgs('name')))
+    this.listeners.forEach((listener) => listener(this, new PropertyChangedEventArgs('name')))
   }
 
   get id(): number {
@@ -95,7 +96,7 @@ export class NodeData extends BaseClass<IPropertyObservable>(IPropertyObservable
 
   set id(value) {
     this._id = value
-    this.listeners.forEach(listener => listener(this, new PropertyChangedEventArgs('id')))
+    this.listeners.forEach((listener) => listener(this, new PropertyChangedEventArgs('id')))
   }
 
   get image(): string {
@@ -104,7 +105,7 @@ export class NodeData extends BaseClass<IPropertyObservable>(IPropertyObservable
 
   set image(value) {
     this._image = value
-    this.listeners.forEach(listener => listener(this, new PropertyChangedEventArgs('image')))
+    this.listeners.forEach((listener) => listener(this, new PropertyChangedEventArgs('image')))
   }
 
   get style(): string {
@@ -113,7 +114,7 @@ export class NodeData extends BaseClass<IPropertyObservable>(IPropertyObservable
 
   set style(value) {
     this._style = value
-    this.listeners.forEach(listener => listener(this, new PropertyChangedEventArgs('style')))
+    this.listeners.forEach((listener) => listener(this, new PropertyChangedEventArgs('style')))
   }
 
   get description(): string {
@@ -122,7 +123,9 @@ export class NodeData extends BaseClass<IPropertyObservable>(IPropertyObservable
 
   set description(value) {
     this._description = value
-    this.listeners.forEach(listener => listener(this, new PropertyChangedEventArgs('description')))
+    this.listeners.forEach((listener) =>
+      listener(this, new PropertyChangedEventArgs('description'))
+    )
   }
 
   get date(): string {
@@ -131,7 +134,7 @@ export class NodeData extends BaseClass<IPropertyObservable>(IPropertyObservable
 
   set date(value: string) {
     this._date = value
-    this.listeners.forEach(listener => listener(this, new PropertyChangedEventArgs('date')))
+    this.listeners.forEach((listener) => listener(this, new PropertyChangedEventArgs('date')))
   }
 
   addPropertyChangedListener(listener) {
@@ -168,7 +171,7 @@ export class NodeData extends BaseClass<IPropertyObservable>(IPropertyObservable
       style: this.style,
       date: this.date,
       badges: this.badges,
-      description: this.description
+      description: this.description,
     }
   }
 }
@@ -188,7 +191,7 @@ export class EdgeData implements IEdge {
     return {
       from: this.from,
       to: this.to,
-      id: this.id
+      id: this.id,
     }
   }
 }
