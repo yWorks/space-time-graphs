@@ -3,7 +3,8 @@ import { BaseClass, IVisualCreator, SvgVisual, RadialLayout, Point } from 'yfile
 
 export class CircleVisual
   extends BaseClass<IVisualCreator>(IVisualCreator)
-  implements IVisualCreator {
+  implements IVisualCreator
+{
   private radii: Array<number>
   private center: any
 

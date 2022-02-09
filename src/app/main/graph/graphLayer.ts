@@ -96,15 +96,17 @@ export class GrayTileLayer extends L.TileLayer {
     const imgd = ctx.getImageData(0, 0, canvas.width, canvas.height)
     const pix = imgd.data
     for (let i = 0, n = pix.length; i < n; i += 4) {
-      pix[i] = pix[i + 1] = pix[i + 2] =
-        // @ts-ignore
-        (this.options.quotaRed * pix[i] +
+      pix[i] =
+        pix[i + 1] =
+        pix[i + 2] =
           // @ts-ignore
-          this.options.quotaGreen * pix[i + 1] +
+          (this.options.quotaRed * pix[i] +
+            // @ts-ignore
+            this.options.quotaGreen * pix[i + 1] +
+            // @ts-ignore
+            this.options.quotaBlue * pix[i + 2]) /
           // @ts-ignore
-          this.options.quotaBlue * pix[i + 2]) /
-        // @ts-ignore
-        this.options.quotaDivider()
+          this.options.quotaDivider()
     }
     ctx.putImageData(imgd, 0, 0)
     img.setAttribute('data-grayscaled', true)

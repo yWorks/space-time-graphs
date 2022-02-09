@@ -32,7 +32,8 @@ export interface IEdge extends IGraphElement {
 
 export class NodeData
   extends BaseClass<IPropertyObservable>(IPropertyObservable)
-  implements IPropertyObservable, INode {
+  implements IPropertyObservable, INode
+{
   private listeners = []
   _id: number
   _image: string
