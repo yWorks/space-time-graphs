@@ -21,6 +21,7 @@ module.exports = function (config) {
           'level',
           'animate',
           'template',
+          'sum'
         ],
       })
     )

@@ -44,7 +44,7 @@
     "@angular/language-service": "~12.1.0",
     "@types/node": "^15.12.4",
     "@types/leaflet": "^1.7.3",
-    "@yworks/optimizer": "^1.5.0",
+    "@yworks/optimizer": "^1.7.1",
     "typescript": "~4.2.4"
   }
 }
