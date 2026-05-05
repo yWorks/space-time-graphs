@@ -1,6 +1,6 @@
 # Navigating Your Graph Through Time and Space
-
-![A screenshot of this sample application](doc/screenshot.png)
+> [!CAUTION]
+>This demo is outdated. Try our new [Time and Space Demo](https://www.yfiles.com/demos/showcase/time-space/).
 
 This repository contains the sample application for the yFiles use case about
 [Navigating Your Graph Through Time and Space](https://www.yworks.com/use-case/navigating-your-graph-through-space-and-time).
